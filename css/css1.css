@@ -14,6 +14,10 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
+a.one:link {color:#ffffff;}
+a.one:hover {color:#ffcc00;}
+a.two:link {color:#ffffff;}
+a.two:hover {color:#ffcc00;}
 .textwhite{
     color: #fff;
 }
