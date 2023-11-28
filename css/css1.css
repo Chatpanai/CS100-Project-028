@@ -1,0 +1,150 @@
+
+.header{
+    min-height: 500px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../image/test1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+nav{
+    display: flex;
+    padding: 2% 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+.textwhite{
+    color: #fff;
+}
+.navimenu{
+    flex: 1;
+    text-align: right;
+}
+.navimenu ul li {
+    list-style: none;
+    display: inline;
+    position: relative;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: underline;
+}
+.text{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    
+    
+}
+.fontbig{
+    font-size: 35px;
+}
+.Grid{
+   
+   display: grid;
+   grid-template-columns: 25% 75%;
+   grid-template-rows: auto;
+   grid-template-areas: 
+        'menulist midcontent ';
+}
+.leftcontent{
+    grid-area: menulist;
+    
+}
+.midcontent{
+    grid-area: midcontent;
+}
+.rightcontent{
+    grid-area: rightcontent;
+}
+.leftcontent{
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+}
+.midcontent{
+   
+    text-align: center;
+}
+.rightcontent{
+    
+    text-align: center;
+}
+.whitetext{
+    color: aliceblue;
+}
+.image1{
+    width: 150px;
+    height: 150px;
+    margin-top: 15px;
+    margin-left: 42%;
+    
+}
+.listui ul li{
+    list-style: none;
+    display: inline;
+    position: relative;
+    text-align: left;
+    
+}
+.underline{
+    text-decoration: underline;
+}
+.leftblock{
+    width: 100%;
+    background-color: rgb(58, 77, 77);
+    color: #fff;
+    
+}
+.row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+.row .left{
+    overflow: hidden;
+    
+    margin-top: 25px;
+}
+.row .left img{
+    
+    background-size: cover;
+}
+.row .right{
+    text-align: left;
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .Grid{
+        
+        grid-template-columns: 25% 75% ;
+        grid-template-rows: auto;
+        grid-template-areas: 
+             'menulist midcontent '
+             'space rightcontent';
+    }
+    .row{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .row .left img{
+        width: 50%;
+    }
+    .row .right{
+        text-align: center;
+    }
+ }
+@media only screen and (max-width: 550px) {
+   .Grid{
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+         'menulist' 'midcontent' 'rightcontent';
+   }
+}
+
+
+  
