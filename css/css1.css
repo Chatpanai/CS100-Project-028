@@ -6,7 +6,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    
 }
 nav{
     display: flex;
@@ -31,15 +30,33 @@ a.two:hover {color:#ffcc00;}
     position: relative;
     padding: 8px 12px;
     color: #fff;
-    text-decoration: underline;
+}
+.navimenu ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.menu_botton{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: 3px solid #fff;
+    padding: 1px 5px 1px 5px;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    max-width: 50px;
+}
+.line{
+    width: 50px;
+    height: 10px;
+    background-color: #ffffff;
+    margin: 6px 0;
 }
 .text{
     width: 100%;
     color: #fff;
     position: absolute;
     text-align: center;
-    
-    
 }
 .fontbig{
     font-size: 35px;
@@ -124,7 +141,7 @@ a.two:hover {color:#ffcc00;}
 @media only screen and (max-width: 768px) {
     .Grid{
         
-        grid-template-columns: 25% 75% ;
+        grid-template-columns: 30% 70% ;
         grid-template-rows: auto;
         grid-template-areas: 
              'menulist midcontent '
@@ -140,6 +157,30 @@ a.two:hover {color:#ffcc00;}
     .row .right{
         text-align: center;
     }
+    .header{
+        min-height: 105px;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../image/test1.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .text{
+        display: none;
+    }
+    .navimenu{
+        display: none;
+    }
+    .textwhite {
+        position: absolute;
+        text-align: center;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .menu_botton{
+        display: flex;
+    }
  }
 @media only screen and (max-width: 550px) {
    .Grid{
@@ -148,6 +189,14 @@ a.two:hover {color:#ffcc00;}
     grid-template-areas: 
          'menulist' 'midcontent' 'rightcontent';
    }
+   .textwhite{
+    position: relative;
+    text-align: left;
+    top: 25%;
+    left: 25%;
+    transform: translate(-40%, 5%);
+    font-size: 30px;
+    }
 }
 
 
