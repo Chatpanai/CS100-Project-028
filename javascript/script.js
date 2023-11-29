@@ -49,11 +49,30 @@ function validateEmail() {
   return true;
 }
 
+// date validation//
+function validateDateInputs() {
+  const startDate = new Date(startDateInput.value);
+  const endDate = new Date(endDateInput.value);
+  const errorStartDateElement = document.getElementById("startDateError");
+  const errorEndDateElement = document.getElementById("endDateError");
+
+  if (startDate >= endDate) {
+    errorStartDateElement.textContent = "Start datetime should be befter the end datetime.";
+    errorEndDateElement.textContent = "End datetime should be after the start datetime.";
+    return false;
+  } else {
+    errorStartDateElement.textContent = "";
+    errorEndDateElement.textContent = "";
+    return true;
+  }
+}
+
 // Function to validate form inputs on user input
 function validateFormOnInput() {
   validateName();
   validateStudentID();
   validateEmail();
+  validateDateInputs();
 }
 
 // Function to fetch activity types from the backend
@@ -92,22 +111,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // Function to submit the form
-// Function to submit the form
 async function submitForm(event) {
   event.preventDefault();
 
   // Validate form inputs before submission
-  if (!validateName() || !validateStudentID() || !validateEmail()) {
-    return;
-  }
-
-  const startDateInput = document.getElementById("startDate").value;
-  const endDateInput = document.getElementById("endDate").value;
-  const startDate = new Date(startDateInput);
-  const endDate = new Date(endDateInput);
-
-  if (endDate <= startDate) {
-    alert("End datetime should be after the start datetime.");
+  if (!validateName() || !validateStudentID() || !validateEmail() || !validateDateInputs()){
     return;
   }
 
@@ -169,7 +177,9 @@ document.getElementById("myForm").addEventListener("submit", submitForm);
 
 // Event listeners for input validation on user input
 document.getElementById("fullname").addEventListener("input", validateName);
-document
-  .getElementById("studentID")
-  .addEventListener("input", validateStudentID);
+document.getElementById("studentID").addEventListener("input", validateStudentID);
 document.getElementById("email").addEventListener("input", validateEmail);
+const startDateInput = document.getElementById("startDate");
+const endDateInput = document.getElementById("endDate");
+startDateInput.addEventListener('input', validateDateInputs);
+endDateInput.addEventListener('input', validateDateInputs);
