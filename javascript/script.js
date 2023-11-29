@@ -138,6 +138,29 @@ async function submitForm(event) {
 
   console.log(data);
 
+  //Create span user's data
+  const dataForSpan = {
+    type_of_work_id: formData.get("activityType"),
+    semester: formData.get("semester"),
+  };
+  const spanData = document.createElement('span');
+  spanData.innerHTML =
+  "Name: " + data.first_name + " " + data.last_name + "<br>" +
+  "ID: " + data.student_id + "<br>" +
+  "Email: " + data.email + "<br>" +
+  "Title: " + data.title + "<br>" +
+  "Type: " + dataForSpan.type_of_work_id + "<br>" +
+  "Academic Year: " + data.academic_year + "<br>" +
+  "Semester: " + dataForSpan.semester + "<br>" +
+  "Start Date: " + data.start_date + "<br>" +
+  "End Date: " + data.end_date + "<br>" +
+  "Location: " + data.location + "<br>" +
+  "Description: " + data.description;
+
+  const resultContainer = document.getElementById('resultContainer');
+  resultContainer.innerHTML = '';
+  resultContainer.appendChild(spanData);
+
   try {
     // Send data to the backend using POST request
     const response = await fetch(`http://${window.location.hostname}:${port}/record`, {
