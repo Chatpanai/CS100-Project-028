@@ -1,11 +1,3 @@
-/*
-  File: script.js
-  Author: CS100 Team
-  Date Created: 23 July 2023
-  Copyright: CSTU
-  Description: JS code of CSTU Passport that validate with JS
-*/
-
 const config = {
   backendUrl: "http://localhost:8000/", // Default backend URL
 };
@@ -44,7 +36,7 @@ function validateStudentID() {
 // Function to validate University Email
 function validateEmail() {
   const emailInput = document.getElementById("email");
-  const emailPattern = /^.+@dome\.tu\.ac\.th$/;
+  const emailPattern = /^.*\.\w{3,}@dome\.tu\.ac\.th$/;
   const errorElement = document.getElementById("emailError");
 
   if (!emailPattern.test(emailInput.value)) {
