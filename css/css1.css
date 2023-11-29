@@ -52,6 +52,12 @@ a.two:hover {color:#ffcc00;}
     background-color: #ffffff;
     margin: 6px 0;
 }
+.menu_popup{
+    display: none;
+}
+.menu_popup.show{
+    display: block;
+}
 .text{
     width: 100%;
     color: #fff;
@@ -180,6 +186,9 @@ a.two:hover {color:#ffcc00;}
     }
     .menu_botton{
         display: flex;
+    }
+    .menu_popup.show{
+        display: block;
     }
  }
 @media only screen and (max-width: 550px) {

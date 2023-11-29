@@ -3,6 +3,12 @@ const config = {
 };
 const port = 8000;
 
+//menu pop up
+function menuPopUp() {
+  const navigationMenu = document.querySelector('.menu_popup');
+  navigationMenu.classList.toggle('show');
+}
+
 // Function to validate Firstname and Lastname
 function validateName() {
   const fullnameInput = document.getElementById("fullname");
