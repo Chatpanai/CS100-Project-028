@@ -46,11 +46,17 @@ a.two:hover {color:#ffcc00;}
     right: 5%;
     max-width: 50px;
 }
+.menu_botton:hover{
+    border: 3px solid #ffcc00;
+}
 .line{
     width: 50px;
     height: 10px;
     background-color: #ffffff;
     margin: 6px 0;
+}
+.menu_botton:hover .line{
+    background-color: #ffcc00;
 }
 .menu_popup{
     display: none;
@@ -67,8 +73,7 @@ a.two:hover {color:#ffcc00;}
 .fontbig{
     font-size: 35px;
 }
-.Grid{
-   
+.Grid{   
    display: grid;
    grid-template-columns: 25% 75%;
    grid-template-rows: auto;

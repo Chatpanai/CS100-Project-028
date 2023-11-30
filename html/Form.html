@@ -40,9 +40,7 @@
       <!-- Firstname and Lastname Field -->
       <div class="form-group">
         <label for="fullname">Firstname and Lastname :</label>
-        <br>
         <input type="text" id="fullname" name="fullname" />
-        <br>
         <small>Only enter your first name and last name, middle name is not necessary.</small>
         <br>
         <span id="fullnameError" class="error"></span>
@@ -51,9 +49,7 @@
       <!-- Student ID Field -->
       <div class="form-group">
         <label for="studentID">Student ID :</label>
-        <br>
         <input type="text" id="studentID" name="studentID" />
-        <br>
         <small>Please enter your 10-digit student ID.</small>
         <br>
         <span id="studentIDError" class="error"></span>
@@ -62,7 +58,6 @@
       <!-- University Email Field -->
       <div class="form-group">
         <label for="email">University Email : </label>
-        <br>
         <input type="email" id="email" name="email" />
         <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
         <br>
@@ -72,9 +67,7 @@
       <!-- Work/Activity Title Field -->
       <div class="form-group">
         <label for="workTitle">Work/Activity Title :</label>
-        <br>
         <input type="text" id="workTitle" name="workTitle" />
-        <br><br>
       </div>
 
       <!-- Type of Work/Activity Field -->
@@ -91,7 +84,6 @@
           <option value="Competition">Competition</option>
           <option value="Computer Science">Computer Science</option>
         </select>
-        <br><br>
       </div>
 
       <!-- Academic Year Field -->
@@ -110,7 +102,6 @@
           <option value="2568">2568</option>
           <option value="2569">2569</option>
         </select>
-        <br><br>
       </div>
 
       <!-- Semester Field -->
@@ -123,7 +114,6 @@
           <option value="2">2</option>
           <option value="Summer">Summer</option>
         </select>
-        <br><br>
       </div>
 
       <!-- Start Date/Time Field -->
@@ -133,7 +123,6 @@
         <input type="datetime-local" id="startDate" name="startDate" />
         <br>
         <span id="startDateError" class="error"></span>
-        <br>
       </div>
 
       <!-- End Date/Time Field -->
@@ -143,27 +132,23 @@
         <input type="datetime-local" id="endDate" name="endDate" />
         <br>
         <span id="endDateError" class="error"></span>
-        <br>
       </div>
 
       <!-- Location Field -->
       <div class="form-group">
         <label for="location">Location :</label>
-        <br>
         <input type="text" id="location" name="location" />
-        <br><br>
       </div>
 
       <!-- Description Field -->
       <div class="form-group">
         <label for="description">Description :</label>
-        <br>
         <textarea id="description" name="description" rows="4"></textarea>
       </div>
 
       <!-- Submit Button -->
       <div class="form-group">
-        <input type="submit" value="Submit" class="sumbitb"/>
+        <input type="submit" value="Submit" class="submitb" onclick="resultPopUp()"/>
       </div>
     </form>
   </div>

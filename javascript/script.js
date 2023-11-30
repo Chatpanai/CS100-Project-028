@@ -9,6 +9,15 @@ function menuPopUp() {
   navigationMenu.classList.toggle('show');
 }
 
+//result popup
+function resultPopUp() {
+  if (!validateName() || !validateStudentID() || !validateEmail() || !validateDateInputs()){
+    return;
+  }
+  const navigationMenu = document.querySelector('.result');
+  navigationMenu.classList.toggle('show');
+}
+
 // Function to validate Firstname and Lastname
 function validateName() {
   const fullnameInput = document.getElementById("fullname");
@@ -150,7 +159,7 @@ async function submitForm(event) {
     semester: formData.get("semester"),
   };
   const spanData = document.createElement('span');
-  spanData.innerHTML =
+  spanData.innerHTML = 
   "Name: " + data.first_name + " " + data.last_name + "<br>" +
   "ID: " + data.student_id + "<br>" +
   "Email: " + data.email + "<br>" +
