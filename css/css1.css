@@ -13,12 +13,19 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-a.one:link {color:#ffffff;}
+a.one:link {color:white;}
 a.one:hover {color:#ffcc00;}
-a.two:link {color:black;}
+a.two:link {color:white}
 a.two:hover {color:#ffcc00;}
 a{text-decoration: none;}
-a:visited{color: white;}
+.two{
+    background-color: ;
+    margin-left: 20%;
+}
+
+h4 a{color: white;}
+
+
 .textwhite{
     color: #fff;
 }
@@ -67,12 +74,20 @@ a:visited{color: white;}
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-color: #fff;
     border: 1px solid #ccc;
     z-index: 1000;
     width: 50%;
     border-radius: 10px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.795);
+    font-family: sans-serif;
+}
+.menu_popup ul li a{
+    color: white;
+}
+.menu_popup ul li{
+    list-style: none;
+    display: inline;
 }
 .menu_popup.show{
     display: block;
