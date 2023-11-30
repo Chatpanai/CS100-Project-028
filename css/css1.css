@@ -17,10 +17,27 @@ a.one:link {color:white;}
 a.one:hover {color:#ffcc00;}
 a.two:link {color:white}
 a.two:hover {color:#ffcc00;}
+a.three:link {color:white}
+a.three:hover {color:#ffcc00;}
+a.four:link {color:white}
+a.four:hover {color:#ffcc00;}
 a{text-decoration: none;}
-.two{
-    background-color: ;
+.three{
+    border: 1px solid white;
+    border-radius: 10%;
+    padding: 2%;
+}
+.four{
+    border: 1px solid white;
+    border-radius: 10%;
+    padding: 2%;
     margin-left: 20%;
+}
+.three:hover{
+    border: 1px solid #ffcc00;
+}
+.four:hover{
+    border: 1px solid #ffcc00;
 }
 
 h4 a{color: white;}
@@ -73,7 +90,7 @@ h4 a{color: white;}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 20%;
     border: 1px solid #ccc;
     z-index: 1000;
     width: 50%;
@@ -81,6 +98,9 @@ h4 a{color: white;}
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.795);
     font-family: sans-serif;
+}
+ul{
+    padding-inline-start: 0px;
 }
 .menu_popup ul li a{
     color: white;
@@ -223,6 +243,15 @@ h4 a{color: white;}
     .menu_popup.show{
         display: block;
     }
+    .menu_popup ul{
+        list-style: none;
+        justify-content: center;
+        padding-left: 40px;
+    }
+    .menu_popup ul li{
+        list-style: none;
+        justify-content: center;
+    }
  }
 @media only screen and (max-width: 550px) {
    .Grid{
@@ -238,6 +267,30 @@ h4 a{color: white;}
     left: 25%;
     transform: translate(-40%, 5%);
     font-size: 30px;
+    }
+    .menu_popup ul li{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .menu_popup ul{
+        list-style: none;
+        justify-content: center;
+        padding-left: 0px;
+    }
+    .four{
+        border: 1px solid white;
+        border-radius: 10%;
+        padding: 10% 20% 10% 20% ;
+        margin-top: 10%;
+        margin-left: 0%;
+        font-size: 120%;
+    }
+    .three{
+        border: 1px solid white;
+        border-radius: 10%;
+        padding: 10% 20% 10% 20% ;
+        font-size: 120%;
     }
 }
 

@@ -74,10 +74,27 @@ a.one:link {color:white;}
 a.one:hover {color:#ffcc00;}
 a.two:link {color:white}
 a.two:hover {color:#ffcc00;}
+a.three:link {color:white}
+a.three:hover {color:#ffcc00;}
+a.four:link {color:white}
+a.four:hover {color:#ffcc00;}
 a{text-decoration: none;}
-.two{
-    background-color: ;
+.three{
+    border: 1px solid white;
+    border-radius: 10%;
+    padding: 2%;
+}
+.four{
+    border: 1px solid white;
+    border-radius: 10%;
+    padding: 2%;
     margin-left: 20%;
+}
+.three:hover{
+    border: 1px solid #ffcc00;
+}
+.four:hover{
+    border: 1px solid #ffcc00;
 }
 .textwhite{
     color: white;
@@ -126,7 +143,7 @@ a{text-decoration: none;}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 20%;
     border: 1px solid #ccc;
     z-index: 1000;
     width: 50%;
@@ -137,6 +154,9 @@ a{text-decoration: none;}
 }
 .menu_popup ul li a{
     color: white;
+}
+ul{
+    padding-inline-start: 0px;
 }
 .menu_popup ul li{
     list-style: none;
@@ -206,6 +226,15 @@ a{text-decoration: none;}
         padding: 30px;
         margin: 0px -75px 0px -75px;
     }
+    .menu_popup ul{
+        list-style: none;
+        justify-content: center;
+        padding-left: 40px;
+    }
+    .menu_popup ul li{
+        list-style: none;
+        justify-content: center;
+    }
  }
 @media only screen and (max-width: 550px) {
    .Grid{
@@ -225,6 +254,30 @@ a{text-decoration: none;}
     .form-container{
         padding: 20px;
         margin: 0px -75px 0px -75px;
+    }
+    .menu_popup ul li{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .menu_popup ul{
+        list-style: none;
+        justify-content: center;
+        padding-left: 0px;
+    }
+    .four{
+        border: 1px solid white;
+        border-radius: 10%;
+        padding: 10% 20% 10% 20% ;
+        margin-top: 10%;
+        margin-left: 0%;
+        font-size: 120%;
+    }
+    .three{
+        border: 1px solid white;
+        border-radius: 10%;
+        padding: 10% 20% 10% 20% ;
+        font-size: 120%;
     }
 }
 

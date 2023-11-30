@@ -36,7 +36,7 @@ function validateName() {
 // Function to validate Student ID
 function validateStudentID() {
   const studentIDInput = document.getElementById("studentID");
-  const studentIDPattern = /^\d{10}$/;
+  const studentIDPattern = /^6[1-6]\d{8}$/;
   const errorElement = document.getElementById("studentIDError");
 
   if (!studentIDPattern.test(studentIDInput.value)) {
