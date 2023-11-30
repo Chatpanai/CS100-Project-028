@@ -16,7 +16,7 @@ function validateName() {
   const errorElement = document.getElementById("fullnameError");
 
   if (names.length !== 2) {
-    errorElement.textContent = "Please enter both your Firstname and Lastname.";
+    errorElement.textContent = "Please enter both your Firstname and Lastname";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
@@ -31,7 +31,7 @@ function validateStudentID() {
   const errorElement = document.getElementById("studentIDError");
 
   if (!studentIDPattern.test(studentIDInput.value)) {
-    errorElement.textContent = "Please enter a 10-digit Student ID.";
+    errorElement.textContent = "Please enter a 10 digit Student ID";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
@@ -63,8 +63,8 @@ function validateDateInputs() {
   const errorEndDateElement = document.getElementById("endDateError");
 
   if (startDate >= endDate) {
-    errorStartDateElement.textContent = "Start datetime should be befter the end datetime.";
-    errorEndDateElement.textContent = "End datetime should be after the start datetime.";
+    errorStartDateElement.textContent = "Start datetime should be befter the end datetime";
+    errorEndDateElement.textContent = "End datetime should be after the start datetime";
     return false;
   } else {
     errorStartDateElement.textContent = "";

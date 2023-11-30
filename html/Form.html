@@ -5,9 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
   <title>Forms - CSTU Passport</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+  <section class="header">
+    <nav>
+        <h2 class="textwhite">Our Activity</h2>
+        <div class="navimenu">
+            <ul>
+                <li><a class="one" href="../index.html" target="_blank">Homepage</a></li>
+                <li><a class="two" href="html/Form.html" target="_blank">our Activity</a></li>
+            </ul>
+        </div>
+        <div class="menu_botton" onclick="menuPopUp()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+</section>
+<nav class="menu_popup">
+    <ul>
+      <li><a href="../index.html">HomePage</a></li>
+      <li><a href="html/Form.html">Our Activity</a></li>
+    </ul>
+  </nav>
+  <div class="main">
   <!-- Form Container -->
   <div class="form-container">
     <h1>CSTU Passport</h1>
@@ -15,37 +39,48 @@
     <form id="myForm" action="#" method="post">
       <!-- Firstname and Lastname Field -->
       <div class="form-group">
-        <label for="fullname">Firstname and Lastname</label>
+        <label for="fullname">Firstname and Lastname :</label>
+        <br>
         <input type="text" id="fullname" name="fullname" />
+        <br>
         <small>Only enter your first name and last name, middle name is not necessary.</small>
+        <br>
         <span id="fullnameError" class="error"></span>
       </div>
       
       <!-- Student ID Field -->
       <div class="form-group">
-        <label for="studentID">Student ID</label>
+        <label for="studentID">Student ID :</label>
+        <br>
         <input type="text" id="studentID" name="studentID" />
+        <br>
         <small>Please enter your 10-digit student ID.</small>
+        <br>
         <span id="studentIDError" class="error"></span>
       </div>
       
       <!-- University Email Field -->
       <div class="form-group">
-        <label for="email">University Email</label>
+        <label for="email">University Email : </label>
+        <br>
         <input type="email" id="email" name="email" />
         <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
+        <br>
         <span id="emailError" class="error"></span>
       </div>
 
       <!-- Work/Activity Title Field -->
       <div class="form-group">
-        <label for="workTitle">Work/Activity Title</label>
+        <label for="workTitle">Work/Activity Title :</label>
+        <br>
         <input type="text" id="workTitle" name="workTitle" />
+        <br><br>
       </div>
 
       <!-- Type of Work/Activity Field -->
       <div class="form-group">
-        <label for="activityType">Type of Work/Activity</label>
+        <label for="activityType">Type of Work/Activity :</label>
+        <br>
         <select id="activityType" name="activityType">
           <option value="" disabled selected>Select an option</option>
           <option value="Course">Course</option>
@@ -56,11 +91,13 @@
           <option value="Competition">Competition</option>
           <option value="Computer Science">Computer Science</option>
         </select>
+        <br><br>
       </div>
 
       <!-- Academic Year Field -->
       <div class="form-group">
-        <label for="academicYear">Academic Year</label>
+        <label for="academicYear">Academic Year :</label>
+        <br>
         <select id="academicYear" name="academicYear">
           <option value="" disabled selected>Select an option</option>
           <option value="2561">2561</option>
@@ -73,56 +110,69 @@
           <option value="2568">2568</option>
           <option value="2569">2569</option>
         </select>
+        <br><br>
       </div>
 
       <!-- Semester Field -->
       <div class="form-group">
-        <label for="semester">Semester</label>
+        <label for="semester">Semester :</label>
+        <br>
         <select id="semester" name="semester">
           <option value="" disabled selected>Select an option</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="Summer">Summer</option>
         </select>
+        <br><br>
       </div>
 
       <!-- Start Date/Time Field -->
       <div class="form-group">
-        <label for="startDate">Start Date/Time</label>
+        <label for="startDate">Start Date/Time :</label>
+        <br>
         <input type="datetime-local" id="startDate" name="startDate" />
+        <br>
         <span id="startDateError" class="error"></span>
+        <br>
       </div>
 
       <!-- End Date/Time Field -->
       <div class="form-group">
-        <label for="endDate">End Date/Time</label>
+        <label for="endDate">End Date/Time :</label>
+        <br>
         <input type="datetime-local" id="endDate" name="endDate" />
+        <br>
         <span id="endDateError" class="error"></span>
+        <br>
       </div>
 
       <!-- Location Field -->
       <div class="form-group">
-        <label for="location">Location</label>
+        <label for="location">Location :</label>
+        <br>
         <input type="text" id="location" name="location" />
+        <br><br>
       </div>
 
       <!-- Description Field -->
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Description :</label>
+        <br>
         <textarea id="description" name="description" rows="4"></textarea>
       </div>
 
       <!-- Submit Button -->
       <div class="form-group">
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" class="sumbitb"/>
       </div>
     </form>
   </div>
-
+  
   <!-- Span Field After Submited-->
-  <div id="resultContainer"></div>
-
+  <div class="result"id="resultContainer"></div>
+</div>
   <!-- JavaScript -->
   <script src="../javascript/script.js"></script>
+
 </body>
 </html>
