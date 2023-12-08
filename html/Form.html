@@ -37,12 +37,12 @@
   <div class="form-container">
     <h1>CSTU Passport</h1>
     <!-- Main Form -->
-<form id="myForm" action="#" method="post">
+    <form id="myForm" action="#" method="post">
       <!-- Firstname and Lastname Field -->
       <div class="form-group">
         <label for="fullname">Firstname and Lastname :</label>
         <input type="text" id="fullname" name="fullname" />
-        <small>Only enter your first name and last name, middle name is not necessary.</small>
+        <small id="nameDisappear">Only enter your first name and last name, middle name is not necessary.</small>
         <br>
         <span id="fullnameError" class="error"></span>
       </div>
@@ -51,7 +51,7 @@
       <div class="form-group">
         <label for="studentID">Student ID :</label>
         <input type="text" id="studentID" name="studentID" />
-        <small>Please enter your 10-digit student ID.</small>
+        <small id="stuIdDisappear">Please enter your 10-digit student ID.</small>
         <br>
         <span id="studentIDError" class="error"></span>
       </div>
@@ -60,7 +60,7 @@
       <div class="form-group">
         <label for="email">University Email : </label>
         <input type="email" id="email" name="email" />
-        <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
+        <small id="emailDisappear">Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
         <br>
         <span id="emailError" class="error"></span>
       </div>
@@ -69,6 +69,7 @@
       <div class="form-group">
         <label for="workTitle">Work/Activity Title :</label>
         <input type="text" id="workTitle" name="workTitle" />
+        <span id="titleCheck" class="error"></span>
       </div>
 
       <!-- Type of Work/Activity Field -->
@@ -103,6 +104,8 @@
           <option value="2568">2568</option>
           <option value="2569">2569</option>
         </select>
+        <br>
+        <span id="academicCheck" class="error"></span>
       </div>
 
       <!-- Semester Field -->
@@ -115,6 +118,8 @@
           <option value="2">2</option>
           <option value="Summer">Summer</option>
         </select>
+        <br>
+        <span id="semesterCheck" class="error"></span>
       </div>
 
       <!-- Start Date/Time Field -->

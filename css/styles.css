@@ -23,6 +23,7 @@ h1{
     text-align: center;
     margin-top: 50px;
     display: none;
+    text-align: left;
 }
 .result.show{
     display: block;
@@ -88,7 +89,7 @@ a{text-decoration: none;}
     border: 1px solid white;
     border-radius: 10%;
     padding: 2%;
-    margin-left: 20%;
+    margin-left: 17%;
 }
 .three:hover{
     border: 1px solid #ffcc00;

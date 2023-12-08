@@ -11,7 +11,7 @@ function menuPopUp() {
 
 //result popup
 function resultPopUp() {
-  if (!validateName() || !validateStudentID() || !validateEmail() || !validateDateInputs()){
+  if (!validateName() || !validateStudentID() || !validateEmail() || !workTitleInput() || !academicYearInput() || !semesterInput() || !validateDateInputs() ){
     return;
   }
   const navigationMenu = document.querySelector('.result');
@@ -23,7 +23,11 @@ function validateName() {
   const fullnameInput = document.getElementById("fullname");
   const names = fullnameInput.value.trim().split(" ");
   const errorElement = document.getElementById("fullnameError");
+  const hideName = document.getElementById("nameDisappear");
 
+  if(names.length !== 0){
+    hideName.style.display = "none";
+  }
   if (names.length !== 2) {
     errorElement.textContent = "Please enter both your Firstname and Lastname";
     return false;
@@ -38,9 +42,13 @@ function validateStudentID() {
   const studentIDInput = document.getElementById("studentID");
   const studentIDPattern = /^6[1-6]\d{8}$/;
   const errorElement = document.getElementById("studentIDError");
+  const hideStuID = document.getElementById("stuIdDisappear");
 
+  if(studentIDInput.length !== 0){
+    hideStuID.style.display = "none";
+  }
   if (!studentIDPattern.test(studentIDInput.value)) {
-    errorElement.textContent = "Please enter a 10 digit Student ID";
+    errorElement.textContent = "Please enter a 10 digit Student ID that start with 6 and followed by 0-6";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
@@ -53,7 +61,11 @@ function validateEmail() {
   const emailInput = document.getElementById("email");
   const emailPattern = /^.*\.\w{3,}@dome\.tu\.ac\.th$/;
   const errorElement = document.getElementById("emailError");
+  const hideEmail = document.getElementById("emailDisappear");
 
+  if(emailInput.length !== 0){
+    hideEmail.style.display = "none";
+  }
   if (!emailPattern.test(emailInput.value)) {
     errorElement.textContent =
       "Please provide a valid university email in the format 'xxx.yyy@dome.tu.ac.th'.";
@@ -64,14 +76,71 @@ function validateEmail() {
   return true;
 }
 
+// Function to check worktitle input
+function workTitleInput() {
+  const workTitleInput = document.getElementById("workTitle");
+  const errorWorkTitle = document.getElementById("titleCheck");
+  const titleCheck = workTitleInput.value;
+
+  if (!titleCheck) {
+    errorWorkTitle.textContent = "Please enter work title";
+    return false;
+  } else{
+    errorWorkTitle.textContent = "";
+    return true;
+  }
+}
+
+// Funtion to check academic year input
+function academicYearInput(){
+  const academicYearInput = document.getElementById("academicYear");
+  const errorAcademicYear = document.getElementById("academicCheck");
+  const academicCheck = academicYearInput.options[academicYearInput.selectedIndex]
+  if(!academicCheck || academicCheck.value === ""){
+    errorAcademicYear.textContent = "Please select academic year";
+    return false;
+  } else{
+    errorAcademicYear.textContent = "";
+    return true;
+  }
+}
+
+// Funtion to check semester input
+function semesterInput(){
+  const semesterInput = document.getElementById("semester");
+  const errorSemester = document.getElementById("semesterCheck");
+  const semesterCheck = semesterInput.options[semesterInput.selectedIndex]
+  if(!semesterCheck || semesterCheck.value === ""){
+    errorSemester.textContent = "Please select semester";
+    return false;
+  } else{
+    errorSemester.textContent = "";
+    return true;
+  }
+}
+
 // date validation//
 function validateDateInputs() {
   const startDate = new Date(startDateInput.value);
   const endDate = new Date(endDateInput.value);
   const errorStartDateElement = document.getElementById("startDateError");
   const errorEndDateElement = document.getElementById("endDateError");
+  const selectedStartDate = startDateInput.value;
+  const selectedEndDate = endDateInput.value;
 
-  if (startDate >= endDate) {
+  if (!selectedStartDate||!selectedEndDate){
+    if(!selectedStartDate){
+      errorStartDateElement.textContent ="Please select start datetime";
+    } else{
+      errorStartDateElement.textContent ="";
+    }
+    if(!selectedEndDate){
+      errorEndDateElement.textContent ="Please select end datetime";
+    } else{
+      errorEndDateElement.textContent ="";
+    }
+    return false;
+  } else if (startDate >= endDate) {
     errorStartDateElement.textContent = "Start datetime should be befter the end datetime";
     errorEndDateElement.textContent = "End datetime should be after the start datetime";
     return false;
@@ -87,6 +156,9 @@ function validateFormOnInput() {
   validateName();
   validateStudentID();
   validateEmail();
+  workTitleInput();
+  academicYearInput();
+  semesterInput();
   validateDateInputs();
 }
 
@@ -130,7 +202,7 @@ async function submitForm(event) {
   event.preventDefault();
 
   // Validate form inputs before submission
-  if (!validateName() || !validateStudentID() || !validateEmail() || !validateDateInputs()){
+  if (!validateName() || !validateStudentID() || !validateEmail() || !workTitleInput() || !academicYearInput() || !semesterInput() || !validateDateInputs()){
     return;
   }
 
@@ -217,6 +289,9 @@ document.getElementById("myForm").addEventListener("submit", submitForm);
 document.getElementById("fullname").addEventListener("input", validateName);
 document.getElementById("studentID").addEventListener("input", validateStudentID);
 document.getElementById("email").addEventListener("input", validateEmail);
+document.getElementById("workTitle").addEventListener("input", workTitleInput);
+document.getElementById("academicYear").addEventListener("input", academicYearInput);
+document.getElementById("semester").addEventListener("input", semesterInput);
 const startDateInput = document.getElementById("startDate");
 const endDateInput = document.getElementById("endDate");
 startDateInput.addEventListener('input', validateDateInputs);
